@@ -2,7 +2,7 @@ import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Image, Platform, StyleSheet,Button, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, useFocusEffect} from '@react-navigation/native';
 import { MonoText } from '../components/StyledText';
 
 
@@ -11,7 +11,12 @@ export default function Login(props) {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+          
+          
           <View style={styles.welcomeContainer}>
+            
+            <Text style = {styles.welcomeText}>Silent Disco</Text>
+            
             <Image
               source={
                 __DEV__
@@ -78,9 +83,16 @@ export default function Login(props) {
         {scaleX: 2}
       ]
     },
+    welcomeText:{
+      color: '#ff8b3d',
+      fontSize: 40,
+      fontFamily: 'normal',
+      fontWeight: '100',
+      marginBottom: 50
+    },
     welcomeContainer: {
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: 250,
         marginBottom: 20,
       },
     welcomeImage: {
@@ -88,7 +100,7 @@ export default function Login(props) {
       height: 160,
       alignItems: "center",
       resizeMode: 'contain',
-      marginTop: 300,
+      marginTop: 10,
       
     },
     getStartedContainer: {
