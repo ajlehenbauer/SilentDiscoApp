@@ -11,7 +11,9 @@ import TabNavigator from './navigation/TabNavigator';
 const Stack = createStackNavigator();
 
 export default function App(props) {
+  
   return (
+    
     <MainStackNavigator/>
   );
 }
@@ -21,12 +23,15 @@ function MainStackNavigator() {
       <Stack.Navigator>
         <Stack.Screen
           name='Login'
+          
           component={Login}
-          options={{ title: 'Login Page' }}
+          options={{headerShown: false}}
+          
         />
         <Stack.Screen
           name='Nav'
           component={TabNavigator}
+          options={{headerShown: false}}
           
         />
       </Stack.Navigator>

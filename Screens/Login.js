@@ -23,14 +23,14 @@ export default function Login(props) {
           </View>
   
           <View style={styles.getStartedContainer}>
-            <View style = {styles.loginContainer}>
-              <Button
-                onPress={() => navigation.navigate('Nav')}
-                title="Login"
-                color="#841584"
-                accessibilityLabel="Login to account"
-              />
-             </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('Nav')}
+          >
+            <Text style = {styles.buttonText}>Login</Text>
+          </TouchableOpacity>
+            
+            
           </View>
           
         </ScrollView>
@@ -43,13 +43,40 @@ export default function Login(props) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#4c4c4c',
+      backgroundColor: '#212121',
     },
-
+    button: {
+ 
+      marginTop:30,
+      paddingTop:12,
+      paddingBottom:12,
+      paddingLeft:40,
+      paddingRight: 40,
+      alignItems: "center",
+      backgroundColor:'#008272',
+      borderRadius:50,
+      borderWidth: 1,
+      borderColor: '#000000'
+    },
+    
+    buttonText:{
+      fontSize:18,
+      
+    },
     loginContainer:{
       alignItems:'center',
       marginTop: 10,
       marginBottom: 20
+    },
+    OvalShapeView: {
+      marginTop: 20,
+      width: 100,
+      height: 100,
+      backgroundColor: '#00BCD4',
+      borderRadius: 50,
+      transform: [
+        {scaleX: 2}
+      ]
     },
     welcomeContainer: {
         alignItems: 'center',
@@ -57,11 +84,12 @@ export default function Login(props) {
         marginBottom: 20,
       },
     welcomeImage: {
-      width: 100,
-      height: 80,
+      width: 200,
+      height: 160,
+      alignItems: "center",
       resizeMode: 'contain',
-      marginTop: 3,
-      marginLeft: -10,
+      marginTop: 300,
+      
     },
     getStartedContainer: {
       alignItems: 'center',
